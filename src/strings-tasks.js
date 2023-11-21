@@ -496,7 +496,7 @@ function extractEmails(str) {
  *
  */
 function encodeToRot13(str) {
-  return str.replace(/[A-Za-z]/g, function (char) {
+  return str.replace(/[A-Za-z]/g, function replaceChar(char) {
     const base = char <= 'Z' ? 65 : 97;
     return String.fromCharCode(base + ((char.charCodeAt(0) - base + 13) % 26));
   });
